@@ -66,7 +66,7 @@ module.exports = function(passport) {
     var pwd2 = post.pwd2;
     var displayName = post.displayName;
     if(db.get('users').find({email: email}).value()) {
-      request.flash('error', 'Your email is already registered! Please check your email.');
+      request.flash('error', 'Your email is already registered! Please check your email or login with google');
       response.redirect('/auth/register');
     } else {
       if(pwd != pwd2) {
